@@ -5,7 +5,7 @@
                 <template for:each={contacts.data} for:item="con">
                     <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={con.Id}>
                         <lightning-card title={con.Name} key={con.Id}>
-                            <lightning-button variant="Success" label="View Details" slot="actions"></lightning-button>
+                            <lightning-button value={con.Id} onclick={navigateToContactDetail} variant="Success" label="View Details" slot="actions"></lightning-button>
                             <p class="slds-p-horizontal_small">{con.Phone}</p>
                             <p class="slds-p-horizontal_small">{con.Email}</p>
                             <p slot="footer">{con.Email}</p>
