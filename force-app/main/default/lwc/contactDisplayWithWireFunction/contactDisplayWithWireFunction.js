@@ -1,7 +1,7 @@
 import { LightningElement, wire } from 'lwc';
-//import NavigationMixin from 'lightning/navigation';
+import {NavigationMixin} from 'lightning/navigation';
 import getContacts from '@salesforce/apex/FetchContact.getContacts';
-export default class ContactDisplayWithWireFunction extends LightningElement {
+export default class ContactDisplayWithWireFunction extends NavigationMixin(LightningElement) {
 
     contacts;
     errorDetails;
@@ -19,7 +19,7 @@ export default class ContactDisplayWithWireFunction extends LightningElement {
     navigateToContactDetail(event){
         this.contactId = event.target.value;
         console.log('in navigate method '+this.contactId);
-        /*
+        
         this[NavigationMixin.Navigate]({
             type:'standard__recordPage',
             attributes:{
@@ -28,6 +28,6 @@ export default class ContactDisplayWithWireFunction extends LightningElement {
                 actionName:'view'
             }           
  
-        }); */ 
+        });
     }
 }
