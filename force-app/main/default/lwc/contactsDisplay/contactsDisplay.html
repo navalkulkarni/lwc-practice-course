@@ -1,5 +1,6 @@
 <template>
     <div class="slds-box mainDiv">
+        <h3>Use wire service with property which gives immutable data</h3>
         <template if:true={contacts.data}>
             <div class="slds-grid slds-wrap slds-gutters">
                 <template for:each={contacts.data} for:item="con">
