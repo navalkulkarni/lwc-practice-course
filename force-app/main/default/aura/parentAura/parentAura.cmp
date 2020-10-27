@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="message" type="String" default="No selection"/>
+    <aura:attribute name="inputMessage" type="String" default="Naval"/>
+    <lightning:card title="AuraDomEventListener" iconName="custom:custom30">
+        <aura:set attribute="actions">
+            <span class="aura">Aura Component</span>
+        </aura:set>
+        <div class="slds-m-around_medium">
+            <lightning:layout>
+                <lightning:layoutItem size="4">
+                    <!-- This is an LWC component -->
+                    <c:childLwc oncallparentevent="{!c.handleCallParent}" onfilterchange="{!c.handleFilterChange}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="8" class="slds-p-left_medium">
+                    {!v.message}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>	
