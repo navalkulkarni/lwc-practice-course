@@ -1,0 +1,33 @@
+<template>
+  <div class="slds-box">
+    <lightning-layout multiple-rows="true">
+        <div class="slds-col slds-size_1-of-3">
+          <lightning-input
+            type="Number"
+            placeholder="Case Number"
+            label="Enter Case Number"
+            value={inputCaseNumber}
+            onchange={searchForCase}
+          ></lightning-input>
+        </div>
+      
+
+    
+    <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+        <template for:each={cases} for:item="eachCase">
+            <div class="slds-col slds-size_1-of-3" key={eachCase.Id}>
+              <lightning-card title={eachCase.CaseNumber} key={eachCase.Id}>
+                <lightning-button
+                  slot="actions"
+                  label="View Details"
+                ></lightning-button>
+                <p class="slds-m-left_medium">{eachCase.Origin}</p>
+                <footer slot="footer">{eachCase.Status}</footer>
+              </lightning-card>
+            </div>
+        </template>
+    </div>
+    </lightning-layout>
+</div>
+  
+</template>
