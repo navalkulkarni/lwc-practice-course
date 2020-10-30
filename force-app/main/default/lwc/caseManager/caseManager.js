@@ -1,4 +1,5 @@
 import { LightningElement, wire } from 'lwc';
+//Import methods from salesforce
 import getCaseCaseRecordsById from '@salesforce/apex/CaseManager.getCaseRecordsById';
 import getAllCases from '@salesforce/apex/CaseManager.getAllCases';
 export default class CaseManager extends LightningElement {
@@ -21,6 +22,10 @@ export default class CaseManager extends LightningElement {
     searchForCase(event){
         this.inputCaseNumber = event.target.value;
         console.log(this.inputCaseNumber);
+
+        //Calling apex method imperatively
+        //make sure parameter is enclosed in curly braces and name of parameter
+        //in js file is the same as the one in class file
         getCaseCaseRecordsById({caseId:this.inputCaseNumber})
         .then(result =>{
             this.cases = result;
