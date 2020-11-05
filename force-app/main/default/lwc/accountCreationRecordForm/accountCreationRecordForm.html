@@ -6,7 +6,8 @@
          <!--Make sure you specify layout-type as Full or Compact. it is case sensitive-->
         <lightning-record-form columns="2"
                                 object-api-name="Account"
-                                layout-type="Full">
+                                layout-type="Full"
+                                onsuccess={handleAccountSuccess}>
         </lightning-record-form>
     </div>
 </template>

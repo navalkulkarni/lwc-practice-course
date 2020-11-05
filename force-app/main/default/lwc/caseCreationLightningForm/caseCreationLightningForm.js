@@ -9,9 +9,21 @@ import CASENUMBER_FIELD from '@salesforce/schema/Case.CaseNumber';
 import PRIORITY_FIELD from '@salesforce/schema/Case.Priority';
 import STATUS_FIELD from '@salesforce/schema/Case.Status';
 import SUBJECT_FIELD from '@salesforce/schema/Case.Subject';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class CaseCreationLightningForm extends LightningElement {
 
     caseObject = CASE_OBJECT;
     caseFields = [CASENUMBER_FIELD,PRIORITY_FIELD,STATUS_FIELD,SUBJECT_FIELD];
+    title = 'Success'
+
+    handleCaseSuccess(event){
+
+        this.dispatchEvent(new ShowToastEvent({
+                title: this.title,
+                message: 'Record Created Successfully...!!!',
+                variant: 'success'
+        }));
+
+    }
 
 }

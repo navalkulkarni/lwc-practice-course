@@ -2,11 +2,12 @@
     <div class="slds-box">
         <!-- You can pass both attributes that is layout-type and fields but layout type 
         will be given preference-->
-        
+
         <h3>Case Creation using Lightning Record Form by passing fields</h3>
         <lightning-record-form object-api-name={caseObject}
                                 columns="3"
                                 fields={caseFields}
+                                onsuccess={handleCaseSuccess}
                                 >
 
         </lightning-record-form>
