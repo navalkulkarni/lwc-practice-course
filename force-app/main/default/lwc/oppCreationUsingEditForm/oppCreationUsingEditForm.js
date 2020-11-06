@@ -18,5 +18,21 @@ export default class OppCreationUsingEditForm extends LightningElement {
     stageField = STAGE_FIELD;
     typeField = TYPE_FIELD;
 
+    handleSuccess(event){
+        this.dispatchEvent(new ShowToastEvent({
+            title: 'Success',
+            message: 'Opportunity Created Successfully..!!',
+            variant: 'success'
+        }));
+    }
+
+    handleReset(event){
+        const inputFields = this.template.querySelectorAll('lightning-input-field');
+
+        inputFields.forEach(field => {
+            field.reset();
+        });
+    }
+
 
 }

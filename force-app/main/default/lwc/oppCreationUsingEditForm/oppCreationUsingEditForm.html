@@ -1,6 +1,7 @@
 <template>
     <div class="slds-box">
-        <lightning-record-edit-form object-api-name={oppObject}>
+        <h1>Opportunity Creation using Lightning Record Edit form</h1>
+        <lightning-record-edit-form object-api-name={oppObject} onsuccess={handleSuccess}>
             <div class="slds-grid slds-wrap slds-gutters">
                 <div class="slds-col slds-size_1-of-3">
                     <lightning-input-field field-name={nameField}>
@@ -26,8 +27,8 @@
                     <lightning-input-field field-name={typeField}></lightning-input-field>
                 </div>
                 <div class="slds-col slds-size_2-of-3">
-                    <lightning-button value="Save"></lightning-button>
-                    <lightning-button value="Cancel"></lightning-button>
+                    <lightning-button variant="brand" type="submit" label="Save" class="slds-p-around_small"></lightning-button>
+                    <lightning-button class="slds-p-around_small" label="Reset" onclick={handleReset} ></lightning-button>
                 </div>
             </div>
         </lightning-record-edit-form>
