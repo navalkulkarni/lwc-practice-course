@@ -11,7 +11,7 @@ trigger deleteAccounts on Account (before delete) {
           // if you do so, account record will be deleted after the exception is caught.
           // our aim is to stop the execution and not continue with it.
         	if(ac.Account.Id != null)
-        	  throw new MyCustomException('This record can\'t be deleleted');    
+        	  throw new MyCustomException('This record can\'t be deleted');    
        
     }
-    
+}
